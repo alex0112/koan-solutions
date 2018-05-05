@@ -19,13 +19,15 @@
 ################################################################################################
 
 def max_profit(prices)
-  prices.each_with_index.map { |price, index| prices[index..-1].map { |compare| price - compare } }.flatten.min.abs
+  min, index           = prices.each_with_index.min
+  future               = prices[index+1..-1]
+  highest_future_price = future.max
+  profit               = highest_future_price - min
 end
 
 p max_profit([10, 7, 5, 8, 11, 9]) ## Returns 6
+p max_profit([100, 9, 8, 78, 40])  ## Returns 70
+p max_profit([0, 1, 2, 3, 4, 5])
+
 
 ## Author: Alex Larsen (2018)
-
-
-
-    
