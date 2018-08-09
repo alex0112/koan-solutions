@@ -28,7 +28,7 @@ end
 ## Solution in O(n)
 
 ###############################################################################################################################################
-# # Explaination                                                                                                                              #
+# # Explanation                                                                                                                               #
 #    .to_s                                                                                                                                    #
 #    .split('')                                                                                                                               #
 #    .map(&to_i) # Splits the number into a list of integers                                                                                  #
