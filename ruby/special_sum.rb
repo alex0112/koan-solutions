@@ -28,7 +28,7 @@ end
 ## Solution in O(n)
 
 ###############################################################################################################################################
-# # Explanation                                                                                                                               #
+# # Explaination                                                                                                                              #
 #    .to_s                                                                                                                                    #
 #    .split('')                                                                                                                               #
 #    .map(&to_i) # Splits the number into a list of integers                                                                                  #
@@ -43,3 +43,6 @@ end
 #    .compact  # Get rid of nil values.                                                                                                       #
 #    .sum      # Sum the values in the array and return.                                                                                      #
 ###############################################################################################################################################
+
+
+# Author Alex Larsen (2017)
