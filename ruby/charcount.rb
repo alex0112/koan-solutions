@@ -23,5 +23,5 @@ puts "Test Cases:"
 p ("simplenexus".count_fmt == "e2i1l1m1n1p1s2u1x1")
 p ("aaaaaaaaaaaa".count_fmt == "a12")
 p ("".count_fmt == "")
-p ("..**((".count_fmt == "(2*2.2")        # Just leaving these "alphabetized" the way that ruby's `sort` function handles them by default.
+p ("..**((".count_fmt == "(2*2.2")  # Just leaving these "alphabetized" the way that ruby's `sort` function handles them by default.
 p ("1112224".count_fmt == "132341") # The problem doesn't specify if numbers should be treated differently, so I'll leave them be. Admittedly the string produced here is pretty useless.

@@ -19,15 +19,14 @@
 ################################################################################################
 
 def max_profit(prices)
-  min, index           = prices.each_with_index.min
-  future               = prices[index+1..-1]
-  highest_future_price = future.max
-  profit               = highest_future_price - min
-end
+  min, index           = prices.each_with_index.min ## Find the lowest value for the day as well as its index.
+  future               = prices[index+1..-1]        ## Create an array of all the prices following the minimum
+  highest_future_price = future.max                 ## From those future values, find the highest value
+  profit               = highest_future_price - min ## The maximum profit that could have been made, if one had bought at the lowest point
+end                                                 ## and sold at the highest future point.
 
 p max_profit([10, 7, 5, 8, 11, 9]) ## Returns 6
 p max_profit([100, 9, 8, 78, 40])  ## Returns 70
 p max_profit([0, 1, 2, 3, 4, 5])
-
 
 ## Author: Alex Larsen (2018)

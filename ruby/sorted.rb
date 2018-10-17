@@ -1,3 +1,5 @@
+## Determine if an array of integers is sorted
+
 class Array
     def is_sorted? ## Runs in O(n)
         return nil if self.length == 0

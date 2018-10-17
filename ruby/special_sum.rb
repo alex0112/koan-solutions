@@ -37,12 +37,11 @@ end
 #                                           # it is being called upon instead of the current package, then push a copy of the first           #
 #                                           # element to the end of the list, creating the equivilant of a circular list.                     #
 #                                                                                                                                             #
-#    .each_cons(2).map { |set| set[0] if set[0] == set[1] }  # Take each possible pair of integers in the array and compare them to the next, #
+#    .each_cons(2).map { |set| set[0] if set[0] == set[1] }  # Take each possible consecutive pair of integers in the array and compare them, #
 #                                                            # return a list of all the integers that are followed by themselves in the list  #
 #                                                                                                                                             #
 #    .compact  # Get rid of nil values.                                                                                                       #
 #    .sum      # Sum the values in the array and return.                                                                                      #
 ###############################################################################################################################################
-
 
 # Author Alex Larsen (2017)
