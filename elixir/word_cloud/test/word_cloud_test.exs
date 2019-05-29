@@ -2,16 +2,12 @@ defmodule WordCloudTest do
   use ExUnit.Case, async: true
   doctest WordCloud
 
-  test "splits on spaces" do
-    assert WordCloud.split("a a")   == ["a", "a"]
-    assert WordCloud.split("a  a")  == ["a", "a"] ## Multiple spaces
-    assert WordCloud.split(" a a ") == ["a", "a"] ## Padded string
+  Enum.each ~w(\s . , ? !), fn char ->
+    @char char
+    test "splits on \"#{@char}\"" do
+      assert WordCloud.split("a" <> @char <> "a")                   == ["a", "a"]
+      assert WordCloud.split("a" <> @char <> @char <> "a")          == ["a", "a"] ## Multiple chars
+      assert WordCloud.split(@char <> "a" <> @char <> "a" <> @char) == ["a", "a"] ## Padded string
+    end
   end
-  
-  # test "splits on commas" do
-  #   assert WordCloud.split("a,a")   == ["a", "a"]
-  #   assert WordCloud.split("a,,a")  == ["a", "a"]
-  #   assert WordCloud.split(",a,a,") == ["a", "a"]
-  # end
-  
 end
