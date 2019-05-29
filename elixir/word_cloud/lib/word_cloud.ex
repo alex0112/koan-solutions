@@ -8,12 +8,17 @@ defmodule WordCloud do
   """
 
   @doc """
-  
+  Split up a sentence based upon common punctuation.
+  e.g. "The, quick brown fox. Jumps? Over! The lazy... (dog)"
+  becomes ~w(The quick brown fox Jumps Over The lazy dog).
   """
-
-  def split_words(str) do
-    String.split(str, ~r/[\s,.;:()[]?!]*\s*/)
+  def split(str) do
+    String.split(to_string(str), ~r/^[\s]+|[\s]+$/)
   end
+
+  @doc """
+  Reduce a wordlist to a map of a word to its frequency of occurence.
+  """
 
   def count(wordlist) do
     Enum.reduce(wordlist, %{}, fn word, dict ->
