@@ -13,7 +13,7 @@ defmodule WordCloud do
   becomes ~w(The quick brown fox Jumps Over The lazy dog).
   """
   def split(str) do
-    String.split(to_string(str), ~r/^[\s]+|[\s]+$/)
+    String.trim(to_string(str)) |> String.split(~r/[\s , . ? !]+/)
   end
 
   @doc """
