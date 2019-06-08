@@ -1,0 +1,6 @@
+Questions:
+
+- `extern crate crate_name`
+- `&mut n`
+- Linking to specific crates
+- `.expect("...");`
