@@ -2,5 +2,7 @@ Questions:
 
 - `extern crate crate_name`
 - `&mut n`
+--> `&` creates a reference
 - Linking to specific crates
 - `.expect("...");`
+--> catches errors that come from the Enum type Err()
