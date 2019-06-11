@@ -1,15 +1,23 @@
+use std::io;
+use rand::Rng;
+
 fn main() {
-    println!("Hello, world!");
-    primitives();
+    println!("Upper: ");
+    let upper: u32 = get_int();
+    println!("Secret: {:#?}", rand_int(upper));
 }
 
+fn get_int() -> u32 {
+    let mut n = String::new();
+    io::stdin()
+        .read_line(&mut n)
+        .expect("failed to read input");
 
-fn primitives() {
-/*    let my_bool: bool = true;
-    let my_float: f64 = 3.14159;
-    let my_integer: u32 = 30056;
-    let mut my_mutable_integer: u32 = 0; */
+    let n: u32 = n.trim().parse().unwrap();
+    return n;
+}
 
-    // bitwise math
-    println!("The 1001 XOR 1100 is {:b}",  (0b1001 ^ 0b1100));
+fn rand_int(upper: u32) -> u32 {
+    let rand: u32 = rand::thread_rng().gen_range(1, upper + 1);
+    return rand;
 }
