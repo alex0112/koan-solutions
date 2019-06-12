@@ -1,10 +1,31 @@
-use std::io;
+use std::io::{self, Write};
 use rand::Rng;
+use std::cmp::Ordering;
 
 fn main() {
-    println!("Upper: ");
-    let upper: u32 = get_int();
-    println!("Secret: {:#?}", rand_int(upper));
+    write("Upper Bound: ");
+
+    let upper: u32 = get_int();    
+    let secret: u32 = rand_int(upper);
+
+    loop {
+        write("Guess: ");
+        let guess: u32 = get_int();
+        
+        match guess.cmp(&secret) {
+            Ordering::Less => println!("Too low."),
+            Ordering::Greater => println!("Too high."),
+            Ordering::Equal => {
+                println!("Correct!");
+                break;
+            },
+        }
+    }
+}
+
+fn write(s: &str) {
+    print!("{}", s);
+    io::stdout().flush().unwrap();
 }
 
 fn get_int() -> u32 {
