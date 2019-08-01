@@ -6,3 +6,6 @@ Questions:
 - Linking to specific crates
 - `.expect("...");`
 --> catches errors that come from the Enum type Err()
+
+Tutorials to follow:
+https://doc.rust-lang.org/book/index.html
