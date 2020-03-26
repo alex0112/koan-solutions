@@ -1,2 +1,1 @@
-# koan-solutions
-A collection of programming challenges and solutions from mostly ruby, elixir, rust, and some c.
+Every once and a while I particpate in code challenges or puzzles.  This repo is dedicated to my solutions.
