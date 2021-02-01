@@ -23,9 +23,9 @@ defmodule WordCloud do
   def count(wordlist) do
     Enum.reduce(wordlist, %{}, fn word, dict ->
       if dict[word] do
-	Map.put(dict, word, dict[word] + 1)
+	    Map.put(dict, word, dict[word] + 1)
       else
-	Map.put(dict, word, 1)
+	    Map.put(dict, word, 1)
       end
     end)
   end
